@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            max-width: 900px;
+            margin: auto;
+            border: 3px dashed red;
+        }
+        header {
+            border: 3px solid gray;
+        }
+        nav {
+            background: pink;
+            padding: 10px;
+        }
+        nav + div {
+            border: 5px double blue;
+            display: flex;
+        }
+        div  div {
+            border: 5px solid green;
+            flex: 2.5;
+        }
+        aside {
+            background: #93dadf;
+            flex: 1;
+        }
+        footer {
+            display: flex;
+        }
+        address {
+            color: blue;
+            font: bold;
+        }
+        /* 반응형(모바일) */
+        @media (max-width:600px) {
+            nav + div {flex-direction: column;}
+        }
+    </style>
+    <title>라인컴퓨터</title>
+</head>
+<body>
+    <header><h1>상단구역</h1></header>
+    <nav>메뉴</nav>
+    <div>
+        <div>
+            <section><h2>정보 1</h2></section>
+            <article><h2>정보 2</h2></article>
+        </div>
+        <aside>부가 정보</aside>
+    </div>
+    <footer>&copy;Juhwan &nbsp; <address onclick="alert('copy')">010-****-2204</address></footer>
+</body>
+</html>

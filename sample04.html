@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Page Layout</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            transition: 0.5s;
+        }
+
+        html, body {
+            font: 9pt 나눔고딕;
+        }
+
+        body {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            font-size: 1rem;
+        }
+
+        header:hover {
+            background: aqua;
+        }
+
+        section:hover {
+            background: linear-gradient(-20deg, tomato, gold);
+        }
+
+        main h1 {
+            display: none;
+        }
+
+        header {
+            height: 50pt;
+            background: skyblue;
+        }
+
+        section {
+            height: 200pt;
+            background: gold;
+        }
+
+        article {
+            height: 100pt;
+            background: orange;
+        }
+
+        article:hover {
+            transform: rotate(5deg);
+        }
+
+        aside {
+            height: 50pt;
+            background: gray;
+        }
+
+        aside:hover {
+            transform: rotate(-5deg);
+        }
+
+        footer {
+            height: 30pt;
+            background: brown;
+        }
+
+        footer:hover {
+            background-color: cyan;
+            transform: rotate(5deg);
+        }
+
+        b {
+            color: red;
+            font-weight: normal;
+            border: 5px dotted rgb(255, 76, 76);
+            padding: 20px;
+            border-radius: 20px;
+            background: rgba(255, 192, 203, 0.7);
+        }
+
+        @media all and (min-width:600pt) {
+            #main_aside {
+                display: flex;
+                height: 300pt;
+            }
+
+            main {
+                flex-grow: 3;
+            }
+
+            aside {
+                flex-grow: 1;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>상단</h1>
+    </header>
+    <div id="main_aside">
+        <main>
+            <h1>메인영역</h1>
+            <section>
+                <h2>일반<b>정보</b></h2>
+            </section>
+            <article>
+                <h2>기사<b>정보</b></h2>
+            </article>
+        </main>
+        <aside>
+            <h2>부가<b>정보</b></h2>
+        </aside>
+    </div>
+    <footer>
+        <h1>하단</h1>
+    </footer>
+</body>
+
+</html>
