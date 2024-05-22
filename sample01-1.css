@@ -3,7 +3,7 @@
 }
 
 body {
-    margin: auto;
+    margin: 0;
 }
 
 #layout01 {
@@ -26,23 +26,20 @@ header:hover {
     background: tomato;
 }
 
-nav {
-}
-
 nav ul {
     display: flex;
-    list-style-position: inside;
+    flex-wrap: wrap;
     padding-left: 0;
     margin: auto;
     padding: 30px 0;
     list-style: none;
-
+    text-align: center;
+    justify-content: center;
 }
 
 nav li {
-    flex: 1;
     text-align: center;
-
+    flex-basis: 110px;
 }
 
 nav li:hover {
@@ -96,7 +93,7 @@ aside {
 }
 
 aside:hover {
-    background: violet;
+    background: linear-gradient(tomato, yellow);
 }
 
 aside p {
@@ -107,10 +104,9 @@ aside p {
     #layout02 {
         flex-direction: column;
     }
-    nav li:nth-child(4), nav li:nth-child(5) {
-        display: none;
-    }
+    
 }
+
 
 .gugi-regular {
     font-family: "Gugi", sans-serif;
