@@ -26,14 +26,13 @@ header:hover {
     background: tomato;
 }
 
-nav {}
+nav {
+}
 
 nav ul {
-    border: 1px solid orange;
     display: flex;
     list-style-position: inside;
     padding-left: 0;
-    max-width: 700px;
     margin: auto;
     padding: 30px 0;
     list-style: none;
@@ -66,27 +65,42 @@ main {
 
 main section {
     background: gold;
+    padding: 20px;
 }
 
 main section:hover {
-    transform: rotate(-15deg);
+    transform: rotate(-10deg);
 }
 
 main article {
     background: silver;
+    padding: 20px;
 }
 
 main article:hover {
-    transform: rotate(15deg);
+    transform: rotate(10deg);
+}
+
+section p {
+    font-family: "Gugi", sans-serif;
+}
+
+article p {
+    font-family: "Gugi", sans-serif;
 }
 
 aside {
     background: yellow;
     flex: 1;
+    padding: 20px;
 }
 
 aside:hover {
     background: violet;
+}
+
+aside p {
+    font-family: "Gugi", sans-serif;
 }
 
 @media (max-width:550px) {
