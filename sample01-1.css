@@ -1,0 +1,111 @@
+* {
+    transition: 0.5s;
+}
+
+body {
+    margin: auto;
+}
+
+#layout01 {
+    border: 3px solid pink;
+    max-width: 900px;
+    margin: auto;
+}
+
+header {
+    background: skyblue;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: "Gugi", sans-serif;
+}
+
+header:hover {
+    background: tomato;
+}
+
+nav {}
+
+nav ul {
+    border: 1px solid orange;
+    display: flex;
+    list-style-position: inside;
+    padding-left: 0;
+    max-width: 700px;
+    margin: auto;
+    padding: 30px 0;
+    list-style: none;
+
+}
+
+nav li {
+    flex: 1;
+    text-align: center;
+
+}
+
+nav li:hover {
+    transform: scale(1.2);
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-family: "Black Han Sans", sans-serif;
+}
+
+#layout02 {
+    display: flex;
+}
+
+main {
+    flex: 2.5;
+}
+
+main section {
+    background: gold;
+}
+
+main section:hover {
+    transform: rotate(-15deg);
+}
+
+main article {
+    background: silver;
+}
+
+main article:hover {
+    transform: rotate(15deg);
+}
+
+aside {
+    background: yellow;
+    flex: 1;
+}
+
+aside:hover {
+    background: violet;
+}
+
+@media (max-width:550px) {
+    #layout02 {
+        flex-direction: column;
+    }
+    nav li:nth-child(4), nav li:nth-child(5) {
+        display: none;
+    }
+}
+
+.gugi-regular {
+    font-family: "Gugi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.black-han-sans-regular {
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
