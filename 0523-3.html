@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>홈태크 연습하기</title>
+    <title>홈태그 연습하기</title>
 
     <style>
         * {
             margin: 0;
             transition: .5s;
+
+            font-family: "Poor Story", system-ui;
         }
 
         #layout {
@@ -20,26 +22,55 @@
 
         header {
             background: linear-gradient(orange, gold);
-            padding: 20px;
+            padding: 20px 0 10px 0;
             text-align: center;
         }
 
         form {
-            border: 1px solid;
-            max-width: 300px;
+            max-width: 200px;
             margin: auto;
-            margin-right: 0;
+            margin-right: 2px;
+            margin-top: 10px;
+            text-align: left;
+            display: flex;
 
+        }
+
+        form input {
+            display: block;
         }
 
         #inputDiv {
-            
+            flex: 1;
+        }
+
+        #inputDiv input {
+            border: white;
+            border-radius: 5px;
+            width: 95%;
+            margin: 2px 0;
+
+            padding-left: 3%;
+
+            font-style: italic;
+        }
+
+        #enter {
+            border: white;
+            border-radius: 5px;
+            background-color: rgb(255, 238, 208);
+
+            font-style: bold;
+        }
+
+        #enter:hover {
+            background: blue;
+            color: white
         }
 
         nav {
-            height: 300px;
+            height: 200px;
             background: radial-gradient(circle, orange 5%, lightpink 60%, lightseagreen 90%);
-            margin: 10px auto;
         }
 
         nav:hover {
@@ -53,40 +84,37 @@
 
         p::first-letter {
             font-size: 2rem;
-            background: rgba(0, 0, 255, 0.4);
-            padding: 0 10px;
+            background: rgba(0, 0, 255, 0.2);
+            padding: 0 5px;
         }
 
         p:hover::first-letter {
-            background-color: red;
+            background-color: rgba(255, 0, 0, 0.3);
         }
 
         main {
-            background-color: lightpink;
+            background-color: rgba(255, 182, 193, 0.9);
             padding: 20px;
             flex: 2;
         }
 
-        /*
-        main p:hover {
-            background-color: tomato;
-        }*/
-
         aside {
-            background-color: lightsalmon;
+            background-color: rgba(255, 160, 122, 0.9);
             padding: 20px;
             flex: 1;
             ;
         }
 
         footer {
-            background-color: lightseagreen;
+            background-color: rgba(32, 178, 171, 0.9);
             padding: 20px;
         }
 
         footer img {
             width: 100%;
             height: 100%;
+
+            mask-image: radial-gradient(rgba(0, 0, 0, 1)20%, rgba(0, 0, 0, 0)70%);
         }
 
         @media(max-width:550px) {
@@ -94,7 +122,17 @@
                 flex-direction: column;
             }
         }
+
+        .poor-story-regular {
+            font-family: "Poor Story", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
     </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -103,10 +141,12 @@
             <h1>상단 구역</h1>
             <form action="#" method="post">
 
-                <input type="text" placeholder="ID">
-                <input type="password" placeholder="Password">
+                <div id="inputDiv">
+                    <input id="id" type="text" placeholder="ID">
+                    <input id="pswd" type="password" placeholder="Password">
+                </div>
 
-                <input type="submit" value="Enter">
+                <input id="enter" type="submit" value="Enter" onclick="alert('제출하시겠습니까?')">
             </form>
         </header>
         <nav></nav>
@@ -115,10 +155,12 @@
                 <h2>메인 구역</h2>
                 <p>
                     제안된 헌법개정안은 대통령이 20일 이상의 기간 이를 공고하여야 한다. 모든 국민은 보건에 관하여 국가의 보호를 받는다. 국회의원은 법률이 정하는 직을 겸할 수 없다.
-
+                </p>
+                <p>
                     국채를 모집하거나 예산외에 국가의 부담이 될 계약을 체결하려 할 때에는 정부는 미리 국회의 의결을 얻어야 한다. 감사위원은 원장의 제청으로 대통령이 임명하고, 그 임기는 4년으로
                     하며, 1차에 한하여 중임할 수 있다.
-
+                </p>
+                <p>
                     대통령은 국회에 출석하여 발언하거나 서한으로 의견을 표시할 수 있다. 제3항의 승인을 얻지 못한 때에는 그 처분 또는 명령은 그때부터 효력을 상실한다. 이 경우 그 명령에 의하여
                     개정 또는 폐지되었던 법률은 그 명령이 승인을 얻지 못한 때부터 당연히 효력을 회복한다.
                 </p>
@@ -127,10 +169,13 @@
                 <h3>부가 구역</h3>
                 <p>
                     국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의 회계검사와 행정기관 및 공무원의 직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다.
-
+                </p>
+                <p>
                     감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다. 대통령이 궐위되거나 사고로 인하여 직무를 수행할 수 없을 때에는 국무총리, 법률이 정한 국무위원의 순서로 그
                     권한을 대행한다.
+                </p>
 
+                <p>
                     중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는 범위안에서 내부규율에 관한 규칙을 제정할 수
                     있다.
                 </p>
