@@ -9,22 +9,45 @@
         *{
             transition: 0.5s;
         }
-        body div {
-            background: yellow;
-            height: 700px;
-            max-width: 700px;
+
+        div {
+            display: flex;
+            max-width: 1400px;
             margin: auto;
             margin-top: 100px;
+            height: 700px;
         }
 
-        div:hover {
-            background-color: tomato;
+        #yellow {
+            background: yellow;
+            flex: 2;
+            
+        }
+
+        #yellow:hover {
+            background-color: green;
+        }
+
+        #blue {
+            background: blue;
+            flex: 1;
+        }
+
+        #blue:hover {
+            background-color: red;
         }
     </style>
 </head>
 <body>
-    <div>
 
+    <div>
+        <div id="yellow">
+        
+        </div>
+        <div id="blue">
+    
+        </div>
     </div>
+    
 </body>
 </html>
