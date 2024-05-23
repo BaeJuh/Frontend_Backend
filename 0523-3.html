@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미션 복습하기</title>
+    <title>홈태크 연습하기</title>
 
     <style>
         * {
@@ -24,8 +24,19 @@
             text-align: center;
         }
 
+        form {
+            border: 1px solid;
+            max-width: 300px;
+            margin: auto;
+            margin-right: 0;
+            display: flex;
+        }
+
+        #inputDiv {
+            
+        }
+
         nav {
-            width: 100px;
             height: 300px;
             background: radial-gradient(circle, orange 5%, lightpink 60%, lightseagreen 90%);
             margin: 10px auto;
@@ -73,6 +84,11 @@
             padding: 20px;
         }
 
+        footer img {
+            width: 100%;
+            height: 100%;
+        }
+
         @media(max-width:550px) {
             #innerLayout01 {
                 flex-direction: column;
@@ -85,6 +101,13 @@
     <div id="layout">
         <header>
             <h1>상단 구역</h1>
+            <form action="#" method="post">
+                <div id="inputDiv">
+                    <input type="text" placeholder="ID">
+                    <input type="password" placeholder="Password">
+                </div>
+                <input type="submit" value="Enter">
+            </form>
         </header>
         <nav></nav>
         <div id="innerLayout01">
@@ -117,6 +140,7 @@
             <h3>
                 하단 구역
             </h3>
+            <img src="/images/Summer.jpg" alt="Summer">
         </footer>
     </div>
 </body>

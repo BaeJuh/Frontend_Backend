@@ -9,23 +9,23 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-    const title = () => {
-        return (
-            <h3 id="title" onMouserEnter={() => console.log('mouse enter')}>Hello I'm a title</h3> 
-        );
-    }
-    const button = () => {
-        return (
-            <button style={{backgroundColor: "tomato"}} onClick={() => console.log("I'm clicked")}>Click me</button>
-        );
-    }
-    const container = (
-        <div>
-            <title /> <Button />
-        </div>
-    );
 
-    ReactDOM.render(container, root);
+    const App = () => {
+        const [counter, setCounter] = React.useState(0);
+        const onClick = () => {
+            setCounter(counter + 1);
+        } ;
+        return (
+        <div>
+            <h3>
+                Total clicks: {counter}
+            </h3>
+            <button onClick={onClick}>
+                Click me
+            </button>
+        </div>
+    )};
+    ReactDOM.render(<App />, root);
     
 </script>
 
