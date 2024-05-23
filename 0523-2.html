@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body > * {
+            margin: auto;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        h1::before {
+            content: "T^T ";
+        }
+
+        h1::after {
+            content: " ^_^";
+        }
+
+        p::before {
+            content: "라인컴퓨터 ";
+        }
+
+        p {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Demo of the ::before selector</h1>
+
+    <p>My name is Donald</p>
+    <p>I live in Ducksburg</p>
+
+</body>
+
+</html>
