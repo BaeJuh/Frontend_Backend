@@ -25,12 +25,9 @@
         </button>
     }
 
-
-    
-
     const MemorizedBtn = React.memo(Btn); // 변경된 오브젝트만 리렌더링
     
-    Btn.propTypes = {
+    Btn.propTypes = { //컴포넌트화된 요소의 인자 검사
         text: PropTypes.string.isRequired,
         fontSize: PropTypes.number,
     }
