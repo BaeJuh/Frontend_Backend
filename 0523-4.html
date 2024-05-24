@@ -10,15 +10,21 @@
             transition: 0.5s;
         }
 
-        div {
+        #layout {
             display: flex;
-            max-width: 1400px;
+            /* max-width: 900px; */
+            max-width: 80vw;
             margin: auto;
-            margin-top: 100px;
-            height: 700px;
+            height: 70vh;
+            margin-top: 15vh;
+            background-color: yellow;
         }
 
-        #yellow {
+        #layout:hover {
+            background-color: tomato;
+        }
+
+        /* #yellow {
             background: yellow;
             flex: 2;
             
@@ -35,17 +41,22 @@
 
         #blue:hover {
             background-color: red;
-        }
+        } */
     </style>
 </head>
 <body>
 
-    <div>
-        <div id="yellow">
-        
-        </div>
-        <div id="blue">
-    
+    <div id="layout">
+        <div id="yellow"></div>
+        <div id="blue"></div>
+        <div id="formLayout">
+            <form action="/action_page.php">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="홍"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" placeholder="길동"><br><br>
+                <input type="submit" value="Submit">
+            </form> 
         </div>
     </div>
     
