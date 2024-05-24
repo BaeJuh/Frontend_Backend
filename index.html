@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            transition: 0.3s;
+        }
+
+        #layout {
+            max-width: 100vw;
+            min-width: 300px;
+            margin: auto;
+            height: 80vh;
+            margin-top: 10vh;
+            background-color: rgb(19, 255, 216);
+            border: 10px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        #formLayout {
+            text-align: center;
+
+        }
+
+        #formLayout label {
+            width: 30%;
+        }
+
+        form {
+            width: 100vw;
+            max-width: 300px;
+            border: 5px dashed yellow;
+            text-align: center;
+        }
+
+        #nameSubmit {
+            margin: auto;
+            display: block;
+            width: 30%;
+        }
+
+
+        #emailSubmit {
+            border-radius: 7px;
+            background: rgb(7, 94, 255);
+            color: white;
+            padding: 3px 7px;
+        }
+
+        #emailSubmit:hover {
+            background: rgb(0, 71, 204);
+        }
+
+        footer {
+            border: 1px solid;
+            height: 700px;
+            background-color: gold;
+        }
+
+        #inputImg {
+            width: 100px;
+        }
+
+        @media(max-width:550px) {
+            #layout {
+                flex-direction: column;
+            }
+
+            #layour>* {
+                width: 100%;
+            }
+        }
+
+        /* #yellow {
+            background: yellow;
+            flex: 2;
+            
+        }
+
+        #yellow:hover {
+            background-color: green;
+        }
+
+        #blue {
+            background: blue;
+            flex: 1;
+        }
+
+        #blue:hover {
+            background-color: red;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div id="layout">
+        <!-- <div id="yellow"></div>
+        <div id="blue"></div> -->
+        <div id="formLayout">
+            <form action="#">
+                <h2>이름 입력</h2>
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname" placeholder="홍"><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname" placeholder="길동"><br>
+                <input id="nameSubmit" type="submit" value="Submit">
+            </form>
+        </div>
+        <main>
+            <form action="#">
+                <h2>이메일 수신동의</h2>
+                <input type="radio" id="agree" name="radioBtn">
+                <label for="email">예</label>
+                <input type="radio" id="disagree" name="radioBtn">
+                <label for="email">아니오</label>
+                <input id="emailSubmit" type="submit" value="Ok"><br>
+                <input type="checkbox" name="hobby" value="m">등산<br>
+                <input type="checkbox" name="hobby" value="f">낚시<br>
+                <input type="checkbox" name="hobby" value="v">영화<br>
+                <input type="color">
+                <input type="date">
+                <input id="inputImg" type="image" src="./images/Naver_logo.jpg">
+                <input type="number" placeholder="숫자를 입력하세요">
+            </form>
+
+        </main>
+    </div>
+    <footer>
+        하단정보
+    </footer>
+
+</body>
+
+</html>
