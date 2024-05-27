@@ -86,33 +86,20 @@
     </section>
 </body>
 <script>
-    let x = 5;
-    const y = 3;
-    x = 20;
-    document.querySelector("p").innerHTML = x + y;
-    document.querySelector("h1").style.backgroundColor = "orange";
-    document.querySelectorAll("ol li")[3].style.backgroundColor = "red";
-    document.querySelectorAll("ol")[1].querySelectorAll("li")[2].style.backgroundColor = "orange";
-    document.querySelectorAll("ol")[1].style.backgroundColor = "silver";
-    document.querySelectorAll("p")[2].innerHTML = y;
-    document.querySelectorAll("p")[2].style.border = "3px dashed red";
+    const myFruits = ["사과", "포도", "수박", "바나나", "무엇"];
+    console.log(myFruits);
+    console.log(typeof myFruits);
+    console.log("오늘은 귀가길에 " + myFruits[0] + "을 살 것이다.");
+    document.querySelectorAll("p")[1].innerHTML = myFruits;
 
+    /* for (let i=0; i<myFruits.length; i++) {
+        if (myFruits[i] == "수박") {
+            document.querySelectorAll("p")[2].innerHTML = myFruits[i];
+        }
+    } */
 
-    const z = "라인컴퓨터확원";
-    let num = 0;
-    const lists = document.querySelectorAll("ol li");
-    for(let i=0; i<lists.length; i++) {
-        lists[i].style.border = "1px dashed blue";
-        console.log(typeof i);
-    }
-
-    let history = {
-        name:"라인컴퓨터",
-        address: "Ansan",
-        age: 7
-    };
-    let age = 27;
-    document.querySelector("p").innerHTML = history.age;
+    document.querySelectorAll("p")[2].innerHTML = myFruits[0];
+    
 </script>
 
 </html>
