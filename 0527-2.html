@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순서있는 목록 태그</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            transition: .3s;
+        }
+
+        section {
+            border: 3px dashed red;
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 3px 3px 19px red;
+            margin-top: 50px;
+            background-color: aqua;
+        }
+
+        section:hover {
+            transform: rotate(-20deg);
+            cursor: default;
+        }
+
+        h1 {
+            flex: 1;
+            padding: 30px;
+            background-color: aqua;
+            font-family: "Gugi", sans-serif;
+        }
+
+        ol {
+            flex: 2;
+            list-style-position: inside;
+            padding: 20px;
+            background-color: aquamarine;
+        }
+
+        p {
+            flex: 1;
+            background-color: lightblue;
+        }
+
+        .gugi-regular {
+            font-family: "Gugi", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <h1>반응형 웹퍼블리싱 학습 순서</h1>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <p>11111111</p>
+    </section>
+
+    <script>
+        document.write('라인컴퓨터아트학원');
+        //alert("Lunch javascript");
+        const num = 777;
+        console.log(num);
+
+        let x = 25;
+        x = 40;
+        const y = 30;
+        console.log(x + y);
+        document.write("\n" +(x+y));
+    </script>
+</body>
+
+</html>

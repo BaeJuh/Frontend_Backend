@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 요소에 컨텐츠 넣기</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            transition: .3s;
+        }
+
+        section {
+            border: 3px dashed red;
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 3px 3px 19px red;
+            margin-top: 50px;
+            background-color: aqua;
+        }
+
+        section:hover {
+            transform: rotate(-20deg);
+            cursor: default;
+        }
+
+        h1 {
+            flex: 1;
+            padding: 30px;
+            background-color: aqua;
+            font-family: "Gugi", sans-serif;
+        }
+
+        ol {
+            flex: 2;
+            list-style-position: inside;
+            padding: 20px;
+            background-color: aquamarine;
+        }
+
+        p {
+            flex: 1;
+        }
+
+        .gugi-regular {
+            font-family: "Gugi", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <h1>반응형 웹퍼블리싱 학습 순서</h1>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <p>11111111</p>
+    </section>
+
+    <script>
+        const x = 5;
+        const y = 3;
+        document.querySelector("p").innerHTML = x + y;
+        document.querySelector("h1").style.backgroundColor = "orange";
+
+    </script>
+</body>
+
+</html>
