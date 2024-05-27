@@ -48,6 +48,7 @@
         }
 
         p {
+            border: 2px dashed red;
             flex: 1;
         }
 
@@ -80,9 +81,9 @@
             <li>jquery</li>
             <li>exercise</li>
         </ol>
-        <p>11111111</p>
-        <p>22222222</p>
-        <p>33333333</p>
+        <p>-</p>
+        <p>-</p>
+        <p>-</p>
     </section>
 </body>
 <script>
@@ -98,7 +99,10 @@
         }
     } */
 
-    document.querySelectorAll("p")[2].innerHTML = myFruits[0];
+    document.querySelectorAll("p")[2].innerHTML = myFruits[myFruits.indexOf("수박")];
+
+    let lotto = [3, 42, 32, 6, 13, 27];
+    document.querySelectorAll("p")[0].innerHTML = lotto[4];
     
 </script>
 
