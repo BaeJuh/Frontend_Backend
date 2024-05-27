@@ -101,8 +101,14 @@
 
     document.querySelectorAll("p")[2].innerHTML = myFruits[myFruits.indexOf("수박")];
 
-    let lotto = [3, 42, 32, 6, 13, 27];
-    document.querySelectorAll("p")[0].innerHTML = lotto[4];
+    let lotto = [];
+
+    for (let i=0; i<6; i++) {
+        let num = Math.floor(Math.random() * 44 + 1);
+        lotto.push(num);
+    }
+
+    document.querySelectorAll("p")[0].innerHTML = lotto;
     
 </script>
 
