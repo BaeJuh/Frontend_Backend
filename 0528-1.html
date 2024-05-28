@@ -6,38 +6,71 @@
     <title>Document</title>
 
     <style>
+        * {
+            margin: 0;
+        }
+        body {
+            margin-top: 20px;
+        }
         nav {
             max-width: 900px;
             margin: auto;
             border: 1px solid;
         }
         nav ul {
-            display: flex;
+            list-style-position: inside;
+            text-align: center;
         }
-        nav li {
+        nav > ul {
+            display: flex;
+            justify-content: space-around;
+        }
+        nav > ul > li {
             border: 1px solid;
+            flex-basis: 20%;
+        }
+
+        .mainMenu {
+            background-color: aquamarine;
+            width: 60%;
+            display: inline-block;
+        }
+
+        .subMenu {
+            background-color: aqua;
+            display: none;
+        }
+
+        .mainMenu:hover + .subMenu{
+            display: block;
+        }
+        .subMenu:hover {
+            display: block;
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#">메뉴1
-                <ul>
+            <li>
+                <a href="#" class="mainMenu">메뉴1
+                <ul class="subMenu">
                     <li><a href="#">메뉴1_1</a></li>
                     <li><a href="#">메뉴1_2</a></li>
                     <li><a href="#">메뉴1_3</a></li>
                 </ul>
             </li>
-            <li><a href="#">메뉴2
-                <ul>
+            <li>
+                <a href="#" class="mainMenu">메뉴2
+                <ul class="subMenu">
                     <li><a href="#">메뉴2_1</a></li>
                     <li><a href="#">메뉴2_2</a></li>
                     <li><a href="#">메뉴2_3</a></li>
                 </ul>
             </li>
-            <li><a href="#">메뉴3
-                <ul>
+            <li>
+                <a href="#" class="mainMenu">메뉴3
+                <ul class="subMenu">
                     <li><a href="#">메뉴3_1</a></li>
                     <li><a href="#">메뉴3_2</a></li>
                     <li><a href="#">메뉴3_3</a></li>
