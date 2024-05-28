@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>상단메뉴 고정 시키기</title>
 
     <style>
         * {
@@ -36,6 +36,7 @@
 
         nav>ul>li {
             flex-basis: 20%;
+            position: relative;
         }
 
         .mainMenu {
@@ -47,6 +48,10 @@
         .subMenu {
             height: 0px;
             overflow-y: hidden;
+            position: absolute;
+            background-color: rgba(127, 255, 212, 0.7);
+            width: 100%;
+            z-index: 1;
         }
 
         .subMenu li:hover {
