@@ -87,7 +87,7 @@ footer {
     /* z-index: 2; */
     position: absolute;
     background-color: gold;
-    max-width: 500px;
+    width: 500px;
     height: 400px;
     left: calc((100% / 2) - 250px);
     top: 120px;
@@ -101,4 +101,10 @@ footer {
     position: absolute;
     right: 30px;
     bottom: 20px;
+}
+
+@media(max-width:550px) {
+    #popup {
+        width: 100%;
+    }
 }
