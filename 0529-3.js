@@ -36,5 +36,5 @@ const on4_1Click = () => {
 }
 
 popup.addEventListener("click", (event) => {
-    event.target.style.backgroundColor = "tomato";
+    event.currentTarget.style.backgroundColor = "tomato";
 });
