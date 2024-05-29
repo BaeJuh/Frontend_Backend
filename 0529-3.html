@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상단 메뉴(메인/하위 메뉴)</title>
+    <title>클릭 이벤트 리스너</title>
 
     <style>
         * {
@@ -14,6 +14,7 @@
         #layout {
             max-width: 900px;
             margin: auto;
+            position: relative;
         }
 
         img {
@@ -21,7 +22,6 @@
         }
 
         /* 상단 */
-
         header {
             height: 100px;
             border: 1px solid blue;
@@ -30,7 +30,6 @@
         }
 
         /* 메뉴 */
-
         nav:not(.subMenu) {
             margin-top: 35px;
         }
@@ -50,24 +49,29 @@
         }
 
         /* 메인메뉴 */
-
         .mainMenu {
             text-align: center;
         }
 
+        nav li .subMenu {
+            transition: .5s;
+        }
+
         nav li:hover .subMenu {
-            display: block;
+            /* display: block; */
             background: rgba(0, 255, 255, 0.7);
+            height: 100%;
         }
 
         /* 서브메뉴 */
-
         .subMenu {
-            display: none;
+            background-color: aquamarine;
+            /* display: none; */
+            height: 0px;
+            overflow: hidden;
         }
 
         /* 메인 */
-
         main {
             height: 70vh;
             border: 1px solid aqua;
@@ -78,10 +82,30 @@
         }
 
         /* 하단 */
-
         footer {
             height: 100px;
             background: gray;
+        }
+
+        /* 공지 */
+        #popup {
+            /* z-index: 2; */
+            position: absolute;
+            background-color: gold;
+            width: 500px;
+            height: 400px;
+            left: calc((100% / 2) - 250px);
+            top: 120px;
+            border-radius: 30px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        #popup #closeBtn {
+            padding: 2px 7px;
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
         }
     </style>
 </head>
@@ -139,8 +163,31 @@
             <img src="./images/Summer.jpg" alt="Summer">
         </main>
         <footer>
-
+            
         </footer>
+        <section id="popup">
+            <h3>공지사항</h3>
+            <button id="closeBtn">닫기</button>
+        </section>
     </div>
+
+    <script>
+        const closeBtn = document.getElementById("closeBtn");
+        const popup = document.getElementById("popup");
+        const Footer = document.querySelector("footer");
+
+        const closeClick = () => {
+            popup.style.display = 'none';
+            Footer.innerText = "Show Popup";
+        };
+
+        const footerFunc = () => {
+            popup.style.display = 'block';
+            Footer.innerText = "";
+        }
+
+        closeBtn.addEventListener("click", closeClick);
+        Footer.addEventListener("click", footerFunc);
+    </script>
 </body>
 </html>
