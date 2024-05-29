@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상단메뉴 고정 시키기</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            transition: .5s;
+
+        }
+
+        body {
+            margin-top: 20px;
+        }
+
+        nav {
+            width: 900px;
+            height: 200px;
+            margin: auto;
+            border: 1px solid;
+            position: absolute;
+            z-index: 1;
+            left: calc((100% / 2) - 450px);
+        }
+
+        nav ul {
+            list-style-position: inside;
+            text-align: center;
+        }
+
+        nav>ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav>ul>li {
+            flex-basis: 20%;
+            position: relative;
+        }
+
+        .mainMenu {
+            background-color: aquamarine;
+            width: 60%;
+            display: inline-block;
+        }
+
+        .subMenu {
+            /* height: 0px; */
+            overflow-y: hidden;
+            position: absolute;
+            background-color: rgba(127, 255, 212, 0.7);
+            width: 100%;
+            z-index: 0;
+            padding-top: 30px;
+            line-height: 200%;
+        }
+
+        /* .subMenu li:hover {
+            color: white;
+            background-color: tomato;
+        } */
+
+        /* z-index 연습 */
+        nav>ul>li:nth-child(2) {
+            z-index: 1;
+        }
+
+        /* .mainMenu:hover+.subMenu {
+            height: 100px;
+        }
+
+        .subMenu:hover {
+            height: 100px;
+        } */
+
+        div {
+            max-width: 900px;
+            margin: auto;
+            border: dashed 5px orange;
+            height: 80vh;
+            position: relative;
+            background-color: blueviolet;
+        }
+
+        #popup {
+            box-sizing: border-box;
+            background: lightcyan;
+            width: 300px;
+            margin: auto;
+            padding: 50px;
+            min-height: 40vh;
+            position: absolute;
+            left: calc((100% / 2) - 150px);
+            top: 50px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0px 0px 50px lightgreen;
+        }
+
+        #closeBtn {
+            padding: 3px 12px;
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+            border-radius: 20px;
+            border: 0;
+            background: lightskyblue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body >
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="mainMenu">메뉴1</a>
+                <ul class="subMenu">
+                    <li><a href="#">메뉴1_1</a></li>
+                    <li><a href="#">메뉴1_2</a></li>
+                    <li><a href="#">메뉴1_3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="mainMenu">메뉴2</a>
+                <ul class="subMenu">
+                    <li><a href="#">메뉴2_1</a></li>
+                    <li><a href="#" onclick="onList2Click()">메뉴2_2</a></li>
+                    <li><a href="#">메뉴2_3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="mainMenu">메뉴3</a>
+                <ul class="subMenu">
+                    <li><a href="#">메뉴3_1</a></li>
+                    <li><a href="#">메뉴3_2</a></li>
+                    <li><a href="#">메뉴3_3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="mainDiv" onclick="onDivClick()">
+        <section id="popup">
+            <h2>공지사항</h2>
+            <button type="button" id="closeBtn" onclick="onClick()">닫기</button>
+        </section>
+    </div>
+
+</body>
+<script>
+    const closeBtn = document.getElementById("closeBtn");
+    const popup = document.getElementById("popup");
+    const mainDiv = document.getElementById("mainDiv");
+    const list_2 = document.querySelector("nav>ul>li:nth-child(2) .subMenu li:nth-child(2)");
+
+    const onClick = () => {
+        popup.style.display = "none";
+    }
+
+    const onDivClick = (event) => {
+        console.log("clicked main div")
+    }
+
+    const onList2Click = () => {
+        list_2.style.background='aqua';
+    }
+</script>
+
+</html>
