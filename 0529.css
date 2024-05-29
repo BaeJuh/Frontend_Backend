@@ -87,7 +87,7 @@ footer {
     /* z-index: 2; */
     position: absolute;
     background-color: gold;
-    width: 500px;
+    max-width: 500px;
     height: 400px;
     left: calc((100% / 2) - 250px);
     top: 120px;
