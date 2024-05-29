@@ -106,5 +106,6 @@ footer {
 @media(max-width:550px) {
     #popup {
         width: 100%;
+        left: 0;
     }
 }
