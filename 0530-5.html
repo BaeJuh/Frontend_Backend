@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
+    <title>셀 합치기</title>
+
+    <style>
+        body {
+            font-family: "Nanum Brush Script", cursive;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        thead {
+            background-color: aquamarine;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #000;
+            ;
+        }
+
+        .c1 {
+            background: #ff0;
+            ;
+        }
+
+        .c2 {
+            background: #0ff;
+            ;
+        }
+
+        .nanum-brush-script-regular {
+            font-family: "Nanum Brush Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <colgroup>
+            <col class="c1">
+            <col class="c2">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2">교과목</th>
+                <!-- <th>점수</th> -->
+            </tr>
+        </thead>
+        <tbody id="cells">
+            <tr>
+                <th rowspan="2">HTML + CSS</th>
+                <td id="htmlScore">93점</td>
+            </tr>
+            <tr>
+                <!-- <th>CSS</th> -->
+                <td id="cssScore">92점</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>평균</th>
+                <td id="averageScore" rowspan="2"></td>
+            </tr>
+            <tr>
+                <th>평균</th>
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <th colspan="2">연습중</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+<script>
+    
+</script>
+</html>
