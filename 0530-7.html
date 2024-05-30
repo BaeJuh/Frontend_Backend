@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>테이블 캡션</title>
+    <title>자바스크립트 인수</title>
 
     <style>
         table {
@@ -45,7 +45,7 @@
         <tbody>
             <tr>
                 <th scope="row">상반기 판매수</th>
-                <td>2만대</td>
+                <td id="20k">2만대</td>
                 <td>5만대</td>
             </tr>
             <tr>
@@ -55,6 +55,13 @@
             </tr>
         </tbody>
     </table>
+    <p style="text-align: center;">이 부분에 글자가 들어온다.</p>
 </body>
+<script>
+    const Table = document.querySelector("table");
 
+    Table.addEventListener("click", (event) => {
+        document.querySelector("p").innerText = event.target.textContent;
+    })
+</script>
 </html>
