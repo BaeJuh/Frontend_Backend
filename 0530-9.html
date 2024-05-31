@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트리스너 인수 2개</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        td,
+        th {
+            border: 1px solid #000;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption style="background-color: yellow;">상품에 따른 상하반기 판매량</caption>
+        <colgroup>
+            <col style="background-color: azure;">
+            <col style="background-color: bisque;">
+            <col style="background-color: burlywood;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">구분</th>
+                <th scope="col">데스크탑 PC</th>
+                <th scope="col">스마트폰</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">상반기 판매수</th>
+                <td id="20k">2만대</td>
+                <td>5만대</td>
+            </tr>
+            <tr>
+                <th scope="row">하반기 판매수</th>
+                <td>3만대</td>
+                <td id="seven">7만대</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align: center;" onclick="Strings(50, 70)">이 부분에 글자가 들어온다.</p>
+</body>
+<script>
+    const Table = document.querySelector("table");
+    const pString = document.querySelector("p");
+
+    Table.addEventListener("click", (event) => {
+        document.querySelector("p").innerText = event.target.textContent;
+    })
+
+    function Strings (i, j) {
+        pString.innerText = `올해 목표는 ${i + j}만대 판매 입니다!!!`
+    }
+    i=30; j=20;
+
+    const Seven = document.getElementById("seven");
+    Seven.addEventListener("click", function () {
+        alert(i + j);
+    });
+</script>
+</html>

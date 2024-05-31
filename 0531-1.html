@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <style>
+        form {max-width: 300px}
+        fieldset {
+            background-color: wheat;
+            border: 2px dashed red;
+            border-radius: 20px;
+            box-shadow: 1px 1px 3px black;
+            padding: 10px 20px;
+        }
+        legend {
+            background-color: white;
+            text-align: center;
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        input {
+            float: right;
+        }
+        button {
+            float: right;
+            border-radius: 20px;
+            border: none;
+            padding: 2px 6px;
+            box-shadow: 0px 0px 8px blue;
+            background-color: #1d9bf0;
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Log in</legend>
+            <p>ID : <input type="text" required></p>
+            <p>PW : <input type="password" required></p>
+            <p><button id="logIn" type="button">Log in</button></p>
+        </fieldset>
+    </form>
+    <footer>
+        우하하
+    </footer>
+</body>
+<script>
+    const logIn = document.getElementById("logIn");
+    const Inputs = document.querySelectorAll("input");
+
+    logIn.addEventListener("click", (event) => {
+        console.log();
+    });
+
+    const submitCheck = () => {
+        if (Inputs[0].value === "" || Inputs[1].value === "") {
+            
+        }
+    }
+
+    const foot = document.querySelector("footer");
+    Inputs[0].addEventListener("input", () => {
+        foot.innerText = Inputs[0].value;
+    });
+
+    console.log(Inputs);
+</script>
+</html>
