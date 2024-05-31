@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인풋 타입</title>
+    <style>
+        form {max-width: 350px}
+        fieldset {
+            background-color: wheat;
+            border: 2px dashed red;
+            border-radius: 20px;
+            box-shadow: 1px 1px 3px black;
+            padding: 10px 20px;
+        }
+        legend {
+            background-color: white;
+            text-align: center;
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        input {
+            float: right;
+        }
+        button {
+            float: right;
+            border-radius: 20px;
+            border: none;
+            padding: 2px 6px;
+            box-shadow: 0px 0px 8px blue;
+            background-color: #1d9bf0;
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="onSubmit()" action="#" method="post">
+        <fieldset>
+            <legend>개인정보</legend>
+            <p><label for="id">ID : </label><input id="id" type="text" required></p>
+            <p><label for="pw">PW : </label><input id="pw" type="password" required></p>
+
+            <p><label for="search">Search</label><input id="search" type="search"></p>
+            <p><label for="email">Email</label><input id="email" type="email"></p>
+            <p><label for="color">Color</label><input id="color" type="color"></p>
+            <p><label for="satisfying">Satisfying</label><input id="satisfying" type="range"></p>
+            <p>
+                Contact<br>
+                <span>
+                    <label for="yes">Yes<input name="cont" id="yes" type="radio"></label><br>
+                    <label for="no">No<input name="cont" id="no" type="radio"></label>
+                </span>
+            </p>
+            <!-- <p><label for="hobby">Hobbies</label><input id="hobby" type="checkbox"></p> -->
+            <p><button id="logIn" type="button">Enter</button></p>
+        </fieldset>
+    </form>
+    <footer>
+        우하하
+    </footer>
+</body>
+<script>
+    const Form = document.getElementById("Form");
+    const logIn = document.getElementById("logIn"); //Button
+
+    const ID = document.getElementById("id");
+    const PW = document.getElementById("pw");
+    const Search = document.getElementById("search");
+    const Email = document.getElementById("email");
+    const Color = document.getElementById("color");
+    const Satisfying = document.getElementById("satisfying");
+    const hobby = document.getElementById("hobby");
+
+    const contacts = document.getElementsByName("cont");
+    let contact;
+
+    contacts.forEach((c) => {
+        c.addEventListener("change", (e) => {
+            contact = e.currentTarget;
+        })
+    });
+
+    logIn.addEventListener("click" ,() => {
+        console.log(contact);
+    });
+
+    const submitCheck = (event) => {
+        if (ID.value === "" || PW.value === "") {
+            logIn.disabled = true;
+        } else {
+            logIn.disabled = false;
+        }
+    }
+
+    const foot = document.querySelector("footer");
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+    }
+
+</script>
+</html>
