@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>type속성사용하여 폼만들고, 스크립트에 value값 vytl</title>
     <style>
+        header {
+            text-align: center;
+            padding: 25px;
+            height: 25px;
+            border: 5px dashed tomato;
+        }
         form {
             max-width: 350px;
             margin: auto;
@@ -35,7 +41,7 @@
 </head>
 
 <body>
-    <header>이쪽에 폼value 값 가져오기</header>
+    <header></header>
     <form action="#" method="post">
         <fieldset>
             <legend>type 속성</legend>
@@ -71,6 +77,9 @@
             <button type="reset">취소하기</button>
         </fieldset>
     </form>
+    <footer>
+
+    </footer>
     <script>
         const f1 = document.querySelector("#id");
         const btn = document.querySelector("button");
@@ -88,7 +97,6 @@
         const Color = document.querySelector("#color");
         const body = document.querySelector("body");
         Color.addEventListener("input", () => {
-            console.log(Color);
             body.style.backgroundColor = Color.value;
         })
 
@@ -98,10 +106,21 @@
             check.addEventListener("change", () => {
                 
                 if (check.checked) {
-                    head.innerText = check.value;
+                    head.innerText += check.value;
+                } else {
+                    head.innerText = "";
                 }
             });
         });
+
+        const foot = document.querySelector("footer");
+        const num = [1, 2, 3, 4, 5];
+
+        for (let i of num) {
+            if (i%2==1) {
+                foot.innerText += i + "...";
+            }
+        }
         
     </script>
 </body>
