@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>구조 요소</title>
+    <title>자바스크립트로 태그 요소 추가</title>
     <style>
         * {
             margin: 0;
@@ -141,7 +141,25 @@
     </div>
 </body>
 <script>
+    const h2 = document.querySelectorAll("h2");
+    h2[0].innerHTML += "<br><b>태그가 추가됨</b>";
 
+    const bro = document.createElement("p");
+    const div = document.createElement("div").innerText = "형제요소가추가됨."
+
+    bro.innerHTML = "우하하하"
+    h2[0].before(bro);
+    h2[1].before(div);
+    
+    const p = document.querySelector("section p");
+    const ul = document.createElement("ul");
+    ul.innerHTML=`
+        <li>딸기</li><li>포도</li><li>바나나</li><li>참외</li>
+    `;
+    ul.style.color = "tomato";
+
+    p.after(ul);
+    
 </script>
 
 </html>
