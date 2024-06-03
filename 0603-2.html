@@ -9,27 +9,86 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         #layout {
             max-width: 1000px;
             margin: auto;
-            border: 1px solid;
+            overflow: auto;
+            border: 0;
         }
         header {
             background-color: beige;
             display: flex;
+            align-items: flex-end;
+            padding: 15px;
         }
         h1 {
             padding: 30px;
+            margin: 0 10px;
         }
         nav {
+            display: flex;
             flex: 1;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 15px;
+            margin: 0 70px 0 20px;
+        }
+        nav > a {
+            border: 1px solid red;
+            width: 100%;
+            text-align: center;
         }
         main {
             background-color: bisque;
+            display: flex;
+            padding: 20px;
+            
+        }
+        section {
+            background-color: wheat;
+            flex: 2;
+            padding: 200px 50px;
+            text-align: center;
+            margin-right: 20px;
+        }
+        #sides {
+            flex: 1.5;
+            height: 100%;
+        
+        }
+        article {
+            background-color:burlywood;
+            padding: 80px;
+            
+        }
+        aside {
+            background-color:burlywood;
+            padding: 80px;
+            margin-top: 25px;
         }
         footer {
             background-color: beige;
+            padding: 10px;
+            padding-left: 200px;
+        }
+        address {
+            background-color: wheat;
+            padding: 5px;
+            max-width: 500px;
+        }
+        p {
+            background-color: wheat;
+            margin-top: 10px;
+            padding: 5px;
+            max-width: 500px;
+        }
+        @media(max-width: 530px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -55,7 +114,7 @@
             </section>
             <div id="sides">
                 <article>
-                    <h2>주요 기사</h2>
+                    <h3>주요 기사</h3>
                 </article>
                 <aside>
                     <h3>광고</h3>
