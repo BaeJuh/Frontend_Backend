@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 요소</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #layout {
+            max-width: 1000px;
+            margin: auto;
+            border: 1px solid;
+        }
+        header {
+            background-color: beige;
+            display: flex;
+        }
+        h1 {
+            padding: 30px;
+        }
+        nav {
+            flex: 1;
+        }
+        main {
+            background-color: bisque;
+        }
+        footer {
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <header>
+            <h1>반응형 웹</h1>
+            <nav>
+                <a href="#">MENU01</a>
+                <a href="#">MENU02</a>
+                <a href="#">MENU03</a>
+                <a href="#">MENU04</a>
+                <a href="#">MENU05</a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>컨텐츠 그룹01</h2>
+            </section>
+            <section>
+                <h2>컨텐츠 그룹02</h2>
+            </section>
+            <div id="sides">
+                <article>
+                    <h2>주요 기사</h2>
+                </article>
+                <aside>
+                    <h3>광고</h3>
+                </aside>
+            </div>
+        </main>
+        <footer>
+            <address>경기도 안산시 단원구 중앙동    032)***-**** ghkslqlsl04@gmail.com</address>
+            <p>COPYRIGHT &copy; All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

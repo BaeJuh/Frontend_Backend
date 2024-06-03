@@ -116,10 +116,11 @@
         const foot = document.querySelector("footer");
         const num = [1, 2, 3, 4, 5];
 
-        for (let i of num) {
-            if (i%2==1) {
-                foot.innerText += i + "...";
+        for (let i=1; i<=10; i++) {
+            for (let j=1; j<=i; j++) {
+                foot.innerHTML += "*"; // "*" * i
             }
+            foot.innerHTML += "<br>";
         }
         
     </script>

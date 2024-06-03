@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of Review</title>
+</head>
+<body>
+    <h3>Show Result this Area</h3>
+    <main>Mission. <br>이 부분에 마우스를 대면 "라인컴퓨터아트학원"이 나오게 작업하세요.</main>
+
+</body>
+<script>
+    const arr = ["치킨", "피자", "햄버거", "파스타"];
+    const y = 1;
+
+    const h3 = document.querySelector("h3");
+    const main = document.querySelector("main");
+    const origin = main.innerHTML;
+
+    main.addEventListener("mouseover", (e) => {
+        main.innerText = "라인컴퓨터학원";
+    });
+    main.addEventListener("mouseout", () => {
+        main.innerHTML = origin;
+    })
+
+    for(let i of arr) {
+        h3.innerHTML += `${i} <br>`;
+        console.log(i);
+    }
+</script>
+</html>
