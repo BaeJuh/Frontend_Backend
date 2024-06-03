@@ -84,6 +84,12 @@
             padding: 5px;
             max-width: 500px;
         }
+        video {
+            max-width: 100%;
+        }
+        audio {
+            max-width: 100%;
+        }
         @media(max-width: 530px) {
             header {
                 flex-direction: column;
@@ -121,9 +127,21 @@
         <main>
             <section>
                 <h2>컨텐츠 그룹01</h2>
+                <audio controls>
+                    <source src="medias/radiant.mp3" type="audio/mpeg">
+                </audio>
+                <video controls>
+                    <source src="medias/movie.mp4" type="video/mp4">
+                </video>
             </section>
             <section>
                 <h2>컨텐츠 그룹02</h2>
+                <audio controls>
+                    <source src="medias/horse.mp3" type="audio/mpeg">
+                </audio>
+                <video controls>
+                    <source src="medias/sea.mp4" type="video/mp4">
+                </video>
             </section>
             <div id="sides">
                 <article>
@@ -156,7 +174,7 @@
     ul.innerHTML=`
         <li>딸기</li><li>포도</li><li>바나나</li><li>참외</li>
     `;
-    ul.style.color = "tomato";
+    ul.style.cssText = `color: tomato; text-align:left; text-style=bold`;
 
     p.after(ul);
     
