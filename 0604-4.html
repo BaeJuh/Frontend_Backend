@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch-case 공부</title>
+</head>
+
+<body>
+    <p>...</p>
+</body>
+<script>
+    let subject = prompt("과목?", '').toUpperCase();
+    if (subject == "자바" || subject == "자바스크립트") {
+        subject = "JS";
+    }
+
+    switch (subject) {
+        case 'HTML':
+        subject += "은 1학점 입니다.";
+            break;
+        case 'CSS':
+        subject += "은 2학점 입니다.";
+            break;
+        case 'JS':
+        subject += "은 3학점 입니다.";
+            break;
+        default:
+            alert("다시 입력하세요.");
+            subject = prompt("누구?", '');
+    }
+    document.querySelector("p").innerHTML = subject;
+</script>
+
+</html>

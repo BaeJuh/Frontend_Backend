@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>이곳에 결과를 표시합니다.</p>
+</body>
+<script>
+    const p = document.querySelector("p");
+    const order = prompt("오늘은 딸기 사과 수박이 준비외었습니다. 무엇을 드릴까요?", '');
+    const menus = {
+        "딸기" : [2000, "🍓"],
+        "사과" : [3000, "🍎"],
+        "수박" : [3500, "🍉"],
+    }
+
+    /* if (Object.keys(menus).includes(order)) {
+        p.innerText = `네 ${menus[order]}원 결제를 도와드리겠습니다.`;
+    } else {
+        p.innerText ="꺼져.";
+    }
+ */
+    p.innerText = Object.keys(menus).includes(order) ? `${menus[order][1]}네 ${menus[order][0]}원 결제를 도와드리겠습니다.${menus[order][1]}` : "꺼져.";
+</script>
+</html>

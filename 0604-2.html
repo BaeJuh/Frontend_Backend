@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>이곳에 결과를 표시합니다.</p>
+    <aside>교재 342p의 실행결과를 표시하는 곳</aside>
+</body>
+<script>
+    const p = document.querySelector("p")
+
+    let age = 20;
+    let fee = '';
+    if ( age < 13 ) {
+        fee = "2000 원";
+    } else {
+        fee = "4000원";
+    }
+
+    p.innerText = fee;
+    let a = prompt("나이입력", '');
+    let f = '';
+    if ( a < 13 || a >= 65) {
+        f = "2000 Won";
+    } else if (a >= 13 && a < 20) {
+        f = "4000 Won";
+    } else {
+        f = "6000 Won";
+    }
+    document.querySelector("aside").innerText = f;
+</script>
+</html>
