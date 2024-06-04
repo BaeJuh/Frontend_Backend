@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="get">
+        <label for="score">점수 입력 : </label>
+        <input id="score" type="number" min="0" max="100">
+        <button>확인</button>
+        <p></p>
+    </form>
+</body>
+<script>
+    const score = document.querySelector("#score");
+    const btn = document.querySelector("button");
+    
+    btn.addEventListener("click", () => {
+        const n = score.value;
+        if (n >= 60) {
+            document.querySelector("p").innerText = "Pass";
+        } else {
+            document.querySelector("p").innerText = "Fail";
+        }
+    });
+</script>
+</html>

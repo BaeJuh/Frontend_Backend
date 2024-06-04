@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" method="get">
+        <label for="fruit">Fruits : </label>
+        <input id="fruit" type="text">
+        <button>구매</button>
+        <p></p>
+    </form>
+</body>
+<script>
+    const fruit = document.querySelector("#fruit");
+    const btn = document.querySelector("button");
+
+    
+    let result = "";
+
+    btn.addEventListener("click", () => {
+        const name = fruit.value;
+        switch (name) {
+            case "사과":
+                result = "2,000원 입니다.";
+                break;
+            case "포도":
+                result = "3,000원 입니다.";
+                break;
+            case "바나나":
+                result = "4,000원 입니다.";
+                break;
+            default:
+                result = "품절 되었습니다.";
+        }
+        document.querySelector("p").innerText = result;
+    });
+
+
+    
+</script>
+
+</html>
