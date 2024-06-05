@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>반달모양, 부채꼴모양 만들기</title>
+    <title>이벤트 없이 애니메이션 실행</title>
     <style>
         * {
             transition: .5s;
@@ -14,12 +14,22 @@
         }
 
         #ra {
+            position: relative;
             max-width: 1500px;
             margin: auto;
             border: 2px solid skyblue;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            animation: move 2s both;
+        }
+        @keyframes move {
+            from {
+                left: 0;
+            }
+            to {
+                left: 90%;
+            }
         }
 
         #ra div {
@@ -52,6 +62,19 @@
         /*마우스호버 애니부분*/
         #ani {
             display: block;
+            border: 1px red solid;
+            display: inline-block;
+            animation: menuMove 5s both;
+            position: relative;
+        }
+
+        @keyframes menuMove {
+            from {
+                left: 0;
+            }
+            to {
+                left: calc(100% - 500px);
+            }
         }
 
         #ani h2 {
