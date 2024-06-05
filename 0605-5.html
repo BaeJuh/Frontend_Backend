@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select & Option</title>
+</head>
+<body>
+    <h3>야구장 입장료</h3>
+    <select id="moneys">
+        <option value="-1">-</option>
+        <option value="1">아동</option>
+        <option value="2">청소년</option>
+        <option value="3">성인</option>
+    </select>
+    <p id="result">---</p>
+</body>
+<script>
+    const x = document.querySelector("#moneys");
+    const result = document.querySelector("#result");
+
+    x.addEventListener("change", (e) => {
+        console.log(e.target.value);
+        switch(e.target.value) {
+            case "1": result.innerText = "Free"; break;
+            case "2": result.innerText = "2$"; break;
+            case "3": result.innerText = "3$"; break;
+            default: result.innerHTML = "---";
+        }
+    })
+</script>
+</html>
