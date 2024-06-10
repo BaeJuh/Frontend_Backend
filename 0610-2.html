@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Option don't have value</title>
+
+</head>
+<body>
+    <section id="menu">
+        <h2>선호 음식 유형</h2>
+        <select id="choice">
+            <option value="xx">-</option>
+            <option value="ko">한식</option>
+            <option value="jp">일식</option>
+            <option value="cn">중식</option>
+            <option value="eu">양식</option>
+        </select>
+    </section>
+    <p>뭐 먹지?</p>
+</body>
+<script>
+    const choice = document.querySelector("#choice");
+    const result = document.querySelector("p");
+    
+    choice.addEventListener("change", (e) => {
+        console.log(e.target.options[e.target.selectedIndex].innerText);
+        result.innerText = e.target.options[e.target.selectedIndex].innerText;
+    })
+</script>
+</html>

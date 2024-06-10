@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤에 반응하여 색 변경하기</title>
+    <style>
+        body {
+            height: 200vh;
+            background-image: linear-gradient(skyblue,cyan, aquamarine);
+        }
+        #layout {
+            background-color: aqua;
+            height: 200px;
+            width: 50%;
+            position: fixed;
+            top: 100px;
+            left: calc(25%);
+            transition: .3s;
+        }
+        #layout.on {
+            background-color: blueviolet;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>마우스 스크롤 하세요...</h1>
+    <div id="layout"></div>
+</body>
+<script>
+    const layout = document.querySelector("#layout");
+    const events = ["wheel", "scroll"];
+
+    for (event of events) {
+        window.addEventListener(event, () => {
+            const color = "#" + Math.floor(Math.random() * (255 * 255 * 255)).toString(16);
+
+            layout.style.backgroundColor = color;
+        })
+    }
+</script>
+</html>

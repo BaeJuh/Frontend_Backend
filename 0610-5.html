@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for each</title>
+</head>
+<body>
+    <ol>
+        <li>서울</li>
+        <li>대구</li>
+        <li>대전</li>
+        <li>부산</li>
+    </ol>
+    <footer>
+        
+    </footer>
+</body>
+<script>
+    const cities = document.querySelectorAll("ol li");
+    const result = document.querySelector("footer");
+    console.log(cities);
+
+    cities.forEach((value, index, arr) => {
+        console.log(value);
+        console.log(index);
+        console.log(arr);
+        result.innerText += `${index}번 째는 ${value.innerText}입니다.\n`;
+    });
+</script>
+</html>

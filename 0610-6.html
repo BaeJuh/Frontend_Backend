@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for each & DOM</title>
+</head>
+<body>
+    <ol>
+        <li>2500원</li>
+        <li>4700원</li>
+        <li>3300원</li>
+        <li>5200원</li>
+    </ol>
+    <footer>
+        Results
+    </footer>
+</body>
+<script>
+    const arr = document.querySelectorAll("ol li");
+    const result = document.querySelector("footer");
+    const sum = document.querySelector("p");
+    let s = 0
+
+    arr.forEach((value, index) => {
+        result.innerText += `\n${index+1}번은 ${value.innerText} 입니다.`;
+        
+        s += parseInt(value.innerText);
+    });
+
+    result.innerText += `\n *** 총합 ${s}원 입니다. ***`;
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for in과 for of</title>
+</head>
+<body>
+    <ol>
+        <li>서울</li>
+        <li>대구</li>
+        <li>대전</li>
+        <li>부산</li>
+    </ol>
+</body>
+<script>
+    const cities = ["서울","인천","부산","대구"];
+    
+
+    for (const i in cities) { // index
+        console.log(i);
+    }
+    for (const i of cities) { // value
+        console.log(i);
+    }
+</script>
+</html>
