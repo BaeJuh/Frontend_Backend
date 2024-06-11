@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>true / false을 사용한 공 이동하기</title>
+    <style>
+        p,
+        div {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: radial-gradient(aqua 10%, dodgerblue);
+            position: relative;
+        }
+
+        div {
+            position: fixed;
+            left: calc((100% - 100px) / 2);
+            top: 10px;
+            box-shadow: 0 0 10px 5px dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <div></div>
+
+    <script>
+        const $p = document.querySelector('p');  //왼쪽이동 공
+        const $div = document.querySelector('div'); //아래이동 공
+
+        //setInterval( 함수명, 지체시간 );//지체시간 간격을 두고 지속적으로 함수를 호출한다
+        setInterval(() => move(), 10);//0.01초 후에 move()라는 함수를 호출한다.
+        setInterval(() => move2(), 7);//0.01초 후에 move()라는 함수를 호출한다.
+
+        let i = 10; //공의위치이며, 증/감하려고 let 키워드 사용함.
+        //let j = true;
+        let sp = 5;  //속도와 관련됨. 숫자를 증가하면 공이 빨라짐
+        let di = 1;  //오른쪽방향으로는 1, 왼쪽방향으로는 -1이 될 예정
+
+        let ww = window.innerWidth; //윈도 넓이
+        let pw = $p.offsetWidth;    //공의 넓이
+
+        move = () => {
+            i += di * sp;
+
+            //반대방향으로 턴하는 코드
+            if (i + pw >= ww || i <= 0) di *= -1;
+
+            $p.style.left = i + 'px';
+        }
+
+        let j = 10;
+        let ddi = 1;
+        let wh = window.innerHeight;
+        let dw = $div.offsetWidth;
+
+        move2 = () => {
+            j += ddi * sp;
+
+            //반대방향으로 리턴
+            if (j + dw >= wh || j <= 0) ddi *= -1;
+
+            $div.style.top = j + 'px';
+        }
+    </script>
+</body>
+
+</html>

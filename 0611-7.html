@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True | False에 따른 다른 답변</title>
+    <style>
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        p {
+            position: relative;
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            background-image: radial-gradient(aqua 10%, dodgerblue);
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <p></p>
+</body>
+<script>
+    const p = document.querySelectorAll("p");
+    
+    let i=10;
+    let bool = true;
+    setInterval(()=>{
+        if(bool) {
+            i++;
+            if ( i >= (window.innerWidth - p[0].offsetHeight)) {
+                bool = !bool;
+            }
+            
+        } else {
+            i--;
+            if ( i <= 0) {
+                bool = !bool;
+            }
+        }
+        p[1].style.left = i + "px";
+        p[0].style.top = i + "px";
+    }, 5);
+</script>
+</html>

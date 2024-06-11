@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>true / false을 사용한 공 이동하기</title>
+    <style>
+        p,
+        div {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: radial-gradient(aqua 10%, dodgerblue);
+            position: relative;
+        }
+
+        div {
+            position: fixed;
+            left: calc((100% - 100px) / 2);
+            top: 10px;
+            box-shadow: 0 0 10px 5px dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <div></div>
+
+    <script>
+        const $p = document.querySelector('p');  //왼쪽이동 공
+        const $div = document.querySelector('div'); //아래이동 공
+
+        //setInterval( 함수명, 지체시간 );//지체시간 간격을 두고 지속적으로 함수를 호출한다
+        setInterval(() => move(), 10);//0.01초 후에 move()라는 함수를 호출한다.
+        setInterval(() => move2(), 7);//0.01초 후에 move()라는 함수를 호출한다.
+
+        let i = 10; //i++ 하려고 let 키워드 사용함.
+        let j = true;
+        let sp = 5;
+
+        let ww = window.innerWidth;
+        let pw = $p.offsetWidth;
+
+        move = () => {
+            if (j) {
+                i += sp; //10+5               
+                if (i >= (ww - pw)) j = false;
+            } else {
+                i = (i + (-sp));
+                if (i <= 0) j = true;            
+            }
+            $p.style.left = i + 'px';
+        }
+
+        let h1 = 10;
+        let h2 = true;
+        let wh = window.innerHeight;
+        let dw = $div.offsetWidth;
+
+        move2 = () => {
+            if (h2) {
+                h1 += sp;
+                if (h1 >= (wh - dw)) h2 = false;
+            } else {
+                h1 = h1 - sp;
+                if (h1 <= 0) h2 = true;
+            }
+            $div.style.top = h1 + 'px';
+        }
+    </script>
+</body>
+
+</html>
