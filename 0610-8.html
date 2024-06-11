@@ -7,7 +7,7 @@
     <style>
         body {
             height: 200vh;
-            background-image: linear-gradient(skyblue,cyan, aquamarine);
+            background-image: linear-gradient(darkblue,cyan, wheat);
         }
         #layout {
             background-color: aqua;
@@ -34,9 +34,15 @@
 
     for (event of events) {
         window.addEventListener(event, () => {
-            const color = "#" + Math.floor(Math.random() * (255 * 255 * 255)).toString(16);
+            
 
-            layout.style.backgroundColor = color;
+            const y = window.pageYOffset;
+            if (y > 100) {
+                const color = "#" + Math.floor(Math.random() * (255 * 255 * 255)).toString(16);
+                layout.style.backgroundColor = color;
+            } else {
+                layout.style.backgroundColor = "aqua";
+            }
         })
     }
 </script>

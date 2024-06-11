@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 내리면 길어진다.</title>
+    <style>
+        body {
+            height: 200vh;
+            background-image: linear-gradient(darkblue,cyan, wheat);
+        }
+        div {
+            width: 250px;
+            background-color: bisque;
+            padding: 10px;
+            border-radius: 20px;
+            position: fixed;
+            left: 0;
+            transition: 1s;
+        }
+        div.long {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h3>스크롤에 따른 변화</h3>
+    <div>스크롤을 내리면 길어진다.</div> 
+</body>
+<script>
+    const div = document.querySelector("div");
+
+    let postY = window.pageYOffset;
+    window.addEventListener("scroll", () => {
+        let currentY = window.pageYOffset;
+
+        if (currentY < postY) {
+            div.classList.remove("long");
+        } else {
+            div.classList.add("long");
+        }
+        
+        postY = window.pageYOffset;
+        console.log(window.pageYOffset);
+    });
+</script>
+</html>

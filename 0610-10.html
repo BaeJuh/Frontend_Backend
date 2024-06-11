@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈도우 넓이 감지하기</title>
+    <style>
+        div {
+            width: 250px;
+            background-color: bisque;
+            padding: 10px;
+            border-radius: 20px;
+            position: relative;
+            left: 0;
+            transition: 1s;
+        }
+        div.move {
+            left: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <h3>현재의 윈도우 넓이는?</h3>
+    <p>윈도우 넓이 표시하는 곳</p>
+    <div>윈도우 넓이가 500보다 작아지면 이 부분은 오른쪽으로 사라진다.</div> 
+</body>
+<script>
+    const div = document.querySelector("div");
+
+    window.addEventListener("resize", (e) => {
+        if (e.target.innerWidth < 500) {
+            div.classList.add("move");
+        } else {
+            div.classList.remove("move");
+        }
+    })
+</script>
+</html>
