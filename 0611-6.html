@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval() 메소드로 공굴리기</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(pink, tomato);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        footer {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(green, tomato);
+            border-radius: 50%;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <footer></footer>
+</body>
+<script>
+    const div = document.querySelector("div");
+    const footer = document.querySelector("footer");
+
+    let i = 0;
+    let x = true;
+    setInterval(() => {
+        if (x) {
+            i++;
+            if (i == 500) {
+                x = false;
+            }
+        } else {
+            i--;
+            if (i == 0) {
+                x = true;
+            }
+        }
+        div.style.left = i + "px";
+        footer.style.top = i + 'px';
+    }, 1);
+</script>
+
+</html>

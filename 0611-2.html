@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 처리 순서</title>
+</head>
+<body>
+    <p>함수 공부</p>
+</body>
+<script>
+    const hi = (text) => {
+        document.querySelector("p").innerText = text;
+    }
+    hi("testing");
+    const aa = (text) => {
+        hi(text);
+    }
+    aa("Hello world !!!");
+</script>
+</html>

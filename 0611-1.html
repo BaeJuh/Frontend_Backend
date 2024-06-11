@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 & 2초후 팝업</title>
+</head>
+<style>
+    * {
+        margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+        height: 200vh;
+    }
+    #ani {
+        position: fixed; 
+        width: 100%; 
+        height: 100vh;
+        top: 0;
+    }
+    #ani.gra {
+        background: radial-gradient(transparent 5%, tomato 10%);
+        animation: startAni 3s both;
+    }
+    @keyframes startAni {
+        from {
+            transform: scale(1);
+            opacity: 1;
+        }
+        to {
+            transform: scale(30);
+            opacity: 0;
+        }
+    }
+    article {
+        position: fixed;
+        background-color: antiquewhite;
+        width: 300px;
+        height: 300px;
+        box-shadow: 0 0 10px 3px black;
+        top: 100px;
+        left: calc((100% - 300px) / 2);
+        padding: 20px;
+        border-radius: 20px;
+        display: none;
+    }
+    article button {
+        float: right;
+        margin-top: 220px;
+    }
+</style>
+<body>
+    <h3>시작화면 애니메이션 p.224</h3>
+    <div id="ani" class="gra"></div>
+    <section>
+        <h3>한글 입숨</h3>
+        <p>모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다. 국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을 심의한다. 대법관은 대법원장의 제청으로 국회의 동의를 얻어 대통령이 임명한다. 언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 헌법재판소는 법관의 자격을 가진 9인의 재판관으로 구성하며, 재판관은 대통령이 임명한다. 군인·군무원·경찰공무원 기타 법률이 정하는 자가 전투·훈련등 직무집행과 관련하여 받은 손해에 대하여는 법률이 정하는 보상외에 국가 또는 공공단체에 공무원의 직무상 불법행위로 인한 배상은 청구할 수 없다.</p>
+        <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 대통령이 궐위된 때 또는 대통령 당선자가 사망하거나 판결 기타의 사유로 그 자격을 상실한 때에는 60일 이내에 후임자를 선거한다. 대통령은 국무회의의 의장이 되고, 국무총리는 부의장이 된다. 모든 국민은 신속한 재판을 받을 권리를 가진다. 형사피고인은 상당한 이유가 없는 한 지체없이 공개재판을 받을 권리를 가진다. 중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는 범위안에서 내부규율에 관한 규칙을 제정할 수 있다. 국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다.</p>
+        <p>대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다. 비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다. 이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다. 대통령이 임시회의 집회를 요구할 때에는 기간과 집회요구의 이유를 명시하여야 한다.</p>
+    </section>
+    <article>
+        <h4>팝업 부분</h4>
+        <button type="button" value="exit">닫기</button>
+    </article>
+</body>
+<script>
+    const popup = document.querySelector("article")
+    const exit = document.querySelector("article button");
+    
+    setTimeout(() => {
+        document.querySelector("#ani").style.display = "none";
+        popup.style.display = "block";
+    }, 1000);
+
+    exit.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+</script>
+</html>

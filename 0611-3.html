@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback function</title>
+</head>
+<body>
+    <h1>콜백 함수는 다른 함수와 병렬로 실행되는 비동기 함수에 활용된다.</h1>
+    <h2>3개의 인수를 통해 콜백 함수 호출</h2>
+    <p></p>
+</body>
+<script>
+    const p = document.querySelector("p");
+
+    const x = (t) => {p.innerHTML = t;}
+    const y = (i, j ,k) => {
+        let t = i * j;
+        k(t);
+    }
+    y(5, 3, x);
+</script>
+</html>

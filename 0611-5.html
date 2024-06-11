@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval() method</title>
+</head>
+<body>
+    <h1></h1>
+</body>
+<script>
+    const h1 = document.querySelector("h1");
+    setInterval(() => {
+        const t = new Date();
+        let day = ""
+        switch (t.getDay()) {
+            case 0: day="SUN"; break;
+            case 1: day="MON"; break;
+            case 2: day="TUE"; break;
+            case 3: day="WED"; break;
+            case 4: day="THU"; break;
+            case 5: day="FRI"; break;
+            case 6: day="SAT"; break;
+        }
+        const days = ["일","월","화","수","목","금", "토"];
+
+        for (let i=0; i<7; i++) {
+            if (i == t.getDay()) {
+                day = days[i] + "요일";
+                break;
+            }
+        }
+        h1.innerHTML = `지금 시각은 ${t.getHours() < 10 ? "0" + t.getHours() : t.getHours()}시 ${t.getMinutes() < 10 ? "0" + t.getMinutes() : t.getMinutes()}분 ${t.getSeconds() < 10 ? "0" + t.getSeconds() : t.getSeconds()}초 <br>${day}`
+    }, 1000);
+</script>
+</html>
