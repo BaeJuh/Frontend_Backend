@@ -1,20 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>전구 불 켜고 끄는 스크립트</title>
+    <style>
+        h1 {
+            max-width: 500px;
+            margin: auto;
+            background-color: beige;
+            text-align: center;
+        }
+
+        #sec {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #sec img {
+            width: 100%;
+
+        }
+    </style>
 </head>
+
 <body>
     <h1>전구 불 켜고 끄기</h1>
-    <section id="bulb">
+    <section id="sec">
         <h2>전구</h2>
-        <button type="button" onclick="document.getElementById('xx').src='images/dog.png'">불켜기</button>
-        <button type="button" onclick="document.getElementById('xx').src='/images/Beach.jpg'">불끄기</button>
-        <img src="/images/Beach.jpg" alt="전구" id="xx">
+        <button type="button" >불 켜기</button>
+        <!-- <button type="button" >불 끄기</button> -->
+        <img src="/images/Naver_logo.jpg" alt="전구" id="xx">
     </section>
 </body>
 <script>
-
+    const img = document.querySelector("#xx");
+    const btn = document.querySelectorAll("button");
+    const change_img = "/images/dog.png";
+    const origin_img = img.src;
+    /* btn[0].addEventListener("click", () => {
+        img.setAttribute('src', change_img);
+    });
+    btn[1].addEventListener("click", () => {
+        img.setAttribute('src', origin_img);
+    }); */
+    btn[0].addEventListener("click", () => {
+        if (img.src == origin_img) {
+            img.setAttribute('src', change_img);
+            btn[0].innerText = "불 끄기"
+        } else {
+            img.setAttribute('src', origin_img);
+            btn[0].innerText = "불 켜기";
+        }
+    })
 </script>
+
 </html>

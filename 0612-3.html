@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시작화면 애니메이션</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+        }
+        #cover {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            
+        }
+        #cover.gra{
+            background: radial-gradient(circle, transparent 5%, black 10%);
+            animation: rara 3s both;
+        }
+        @keyframes rara {
+            from {transform: scale(1);}
+            to {transform: scale(30);}
+        }
+        #layout {
+            max-width: 900px;
+            margin: auto;
+            border: 5px solid pink;
+            padding: 20px;
+        }
+        #layout p {
+            padding-top: 20px;
+        }
+        #popup {
+            position: fixed;
+            background-color: bisque;
+            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.7);
+            width: 300px;
+            height: 300px;
+            top: 100px;
+            left: calc((100% - 300px)/2);
+            display: none;
+        }
+        #popup button {
+            float: right;
+            margin-top: 240px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>시작화면 애니메이션</h1>
+    <div id="cover" class="gra"></div>
+    <div id="layout">
+        <h2>한글 입숨</h2>
+        <p>언론·출판은 타인의 명예나 권리 또는 공중도덕이나 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나 권리를 침해한 때에는 피해자는 이에 대한 피해의 배상을 청구할 수 있다. 국무회의는
+            정부의 권한에 속하는 중요한 정책을 심의한다. 대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다.</p>
+        <p>국정감사 및 조사에 관한 절차 기타 필요한 사항은 법률로 정한다. 광물 기타 중요한 지하자원·수산자원·수력과 경제상 이용할 수 있는 자연력은 법률이 정하는 바에 의하여 일정한 기간 그 채취·개발
+            또는 이용을 특허할 수 있다. 헌법재판소는 법관의 자격을 가진 9인의 재판관으로 구성하며, 재판관은 대통령이 임명한다.</p>
+        <p>모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 모든 국민은 학문과 예술의 자유를 가진다. 이 헌법은 1988년 2월 25일부터 시행한다. 다만, 이 헌법을 시행하기 위하여 필요한
+            법률의 제정·개정과 이 헌법에 의한 대통령 및 국회의원의 선거 기타 이 헌법시행에 관한 준비는 이 헌법시행 전에 할 수 있다.</p>
+        <p>감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다. 저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 재산권의 행사는 공공복리에 적합하도록 하여야 한다.
+            중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는 범위안에서 내부규율에 관한 규칙을 제정할 수 있다.</p>
+        <p>교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다. 대통령은 제1항과 제2항의 처분 또는 명령을 한 때에는 지체없이 국회에 보고하여 그 승인을 얻어야
+            한다. 정부는 예산에 변경을 가할 필요가 있을 때에는 추가경정예산안을 편성하여 국회에 제출할 수 있다.</p>
+    </div>
+    <section id="popup">
+        <h3>POPUP</h3>
+        <button type="button">Close</button>
+    </section>
+</body>
+<script>
+    const popup = document.querySelector("#popup");
+    const closeBtn = document.querySelector("#popup button");
+    console.log(closeBtn)
+    setTimeout( ()=> {
+        document.querySelector("#cover").style.display = "none";
+        popup.style.display = "block";
+    }, 2000);
+
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    })
+</script>
+</html>
