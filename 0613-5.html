@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>봄 여름 가을 겨울</title>
+    <style>
+        #season {max-width:610px; margin:auto; border:5px dotted tomato; text-align: center;}
+        #season img {width:300px;}
+        #season button {
+            padding:4px 8px 5px; border-radius:5px;
+            background: linear-gradient(#bbb,#eee);
+        }
+        #season button:hover {
+            background: linear-gradient(#eee, #bbb);
+        }
+        #season img.active {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <section id="season"> 
+        <div>
+            <button>봄</button> 
+            <button>여름</button> 
+            <button>가을</button> 
+            <button>겨울</button>
+        </div>
+        <div>
+            <!-- 이미지배열이 랜더링되는 곳-->
+        </div>        
+    </section>
+
+    <script>
+        const $season = document.querySelector('#season div:last-child');
+        
+
+        //이미지 경로를 배열에 넣어둔다
+        const imgs = ['images/spring.jpg','images/summer.jpg','images/fall.jpg','images/winter.jpg'];
+
+        //이미지를 순서대로 배치한다
+        imgs.forEach( i =>  {
+            $season.innerHTML += `<img src=${i} alt='계절'>`;
+        });
+
+        //버튼을 클릭하면 해당되는 이미지만 보인다
+        const $button =  document.querySelectorAll('button'); //[0,1,2,3]
+        const $img = document.querySelectorAll('img'); //[0,1,2,3]
+        $button.forEach( ( i, j ) => {//i는 버튼각각, j는 index
+            i.addEventListener('click' , () => {
+                $img.forEach( (b, c) => { //b는 이미지각각, c는 index
+                    if(j === c) b.style.display='block';
+                    else         b.style.display='none';
+                });
+            });
+        });
+        console.log($img);
+    </script>
+</body>
+</html>
