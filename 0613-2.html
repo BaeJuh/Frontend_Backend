@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오브젝트 할당</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+<script>
+    const ps = document.querySelectorAll("p");
+
+    const iu = {
+        name : "iu",
+        addr : "seoul",
+        hair : "black",
+    };
+    const iu2 = {
+        eye : "brown",
+        friend : "Nicolas",
+    };
+    let uuu = {
+        ...iu, ...iu2
+    }
+
+    let {name, hair, addr} = iu;
+    console.log(uuu);
+    ps[2].innerText = `나의 이름은 ${name}이며 ${addr}에 살고 ${hair}색 머리이다.`
+
+
+</script>
+</html>

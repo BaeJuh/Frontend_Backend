@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 공부하기</title>
+</head>
+<body>
+    <h1>About array</h1>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+<script>
+    const Ps = document.querySelectorAll("p");
+    let arr = [1, 3, 5, 7, 9, 0, 5];
+    let maxN = Math.max(...arr);
+    
+    let fruits = ["딸기", "사과", "바나나"];
+    fruits.push("수박");
+    fruits.unshift("키위");
+    let fruits_copy = [...fruits, ...fruits, ...fruits];
+    console.log(fruits_copy);
+</script>
+</html>
