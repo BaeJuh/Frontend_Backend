@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전계 연산자와 이미지 배열</title>
+    <style>
+        * {}
+
+        h1 {
+            text-align: center;
+            text-shadow: 1px 1px 5px brown;
+        }
+
+        #imgBox {
+            width: 800px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        div {
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>이미지 배열</h1>
+    <section id="imgBox">
+
+    </section>
+    <div>
+        <button id="oddEven">짝/홀</button>
+        <button id="reset">Reset</button>
+    </div>
+    
+</body>
+<script>
+    const section = document.querySelector("section");
+
+    const imgs = [
+        "images/1.jpg",
+        "images/2.jpg",
+        "images/3.jpg",
+        "images/4.jpg",
+        "images/5.jpg",
+        "images/6.jpg"
+    ];
+
+    imgs.forEach((img, index) => {
+        section.innerHTML += `<img src=${img} alt="numbers">`
+    })
+    const nums = document.querySelectorAll("img");
+
+    const btn = document.querySelector("#oddEven");
+    const reset = document.querySelector("#reset");
+    console.log(nums);
+
+    let isEven = true;
+    btn.addEventListener("click", () => {
+        nums.forEach((num, index) => {
+            if (isEven) {
+                btn.innerText = "짝수";
+                if (index % 2 === 0) {
+                    num.style.display = "none";
+                } else {
+                    num.style.display = "block";
+                }
+            } else {
+                btn.innerText = "홀수";
+                if (index % 2 === 1) {
+                    num.style.display = "none";
+                } else {
+                    num.style.display = "block";
+                }
+            }
+        })
+        isEven = !isEven;
+
+    });
+
+    reset.addEventListener("click", () => {
+        nums.forEach((num) => {
+            num.style.display = "block";
+        });
+        btn.innerText = "짝/홀";
+        isEven = true;
+    })
+
+
+    // innerHTML = <img src=`${imgs[0]} alt="numbers"`>
+</script>
+
+</html>

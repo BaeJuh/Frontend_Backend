@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>봄 여름 가을 겨울</title>
+    <style>
+        #imgs {
+            margin: auto; 
+            max-width: 610px;
+            text-align: center;
+        }
+        img {
+            width: 25%;
+        }
+        #buttons {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imgs">
+
+    </div>
+    <div id="buttons">
+        <button id="sp">봄</button>
+        <button id="sm">여름</button>
+        <button id="at">가을</button>
+        <button id="wt">겨울</button>
+        <button id="reset">reset</button>
+    </div>
+    
+</body>
+<script>
+    const div = document.querySelector("#imgs");
+
+    img_srcs = [
+        "/images/spring.jpg",
+        "/images/summer.jpg",
+        "/images/fall.jpg",
+        "/images/winter.jpg",
+    ];
+
+    img_srcs.forEach((img_src, index) => {
+        div.innerHTML += `<img src=${img_src} alt="계절 id=${index}">`
+    });
+
+    const btns = document.querySelectorAll("button");
+    const imgs = document.querySelectorAll("img");
+    btns.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            imgs.forEach((img) => {
+                img.style.display = "none";
+            })
+            imgs[index].style.display = "block";
+        });
+    });
+
+    const reset = document.querySelector("#reset");
+    reset.addEventListener("click", () => {
+        imgs.forEach((img) => {
+                img.style.display = "block";
+            })
+    })
+
+</script>
+
+</html>
