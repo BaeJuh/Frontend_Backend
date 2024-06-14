@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2></h2>
+</body>
+<script>
+    let i = 0;
+    let str = "";
+    const h2 = document.querySelector("h2");
+
+    const nums = " 12345";
+
+    setInterval(() => {
+        h2.innerHTML = nums.slice(0, (i%nums.length)+1);
+        i++
+    }, 500);
+
+    /* setInterval(()=>{
+        h2.innerHTML += (i%5) + 1;
+        i++;
+        if (h2.innerText.length > 5) {
+            h2.innerHTML = "";
+            i = 0;
+        }
+        
+    }, 500) */
+</script>
+</html>

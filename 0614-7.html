@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #layout {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        img {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <div>
+            <button>봄</button>
+            <button>여름</button>
+            <button>가을</button>
+            <button>겨울</button>
+            <button id="reset">리셋</button>
+        </div>
+        <div id="imgs">
+
+        </div>
+    </div>
+
+</body>
+<script>
+    const imgDiv = document.querySelector("#imgs");
+
+    const imgs = ['images/spring.jpg', 'images/summer.jpg', 'images/fall.jpg', 'images/winter.jpg'];
+
+    imgs.forEach((img) => {
+        imgDiv.innerHTML += `<img src=${img} alt='계절'>`;
+    });
+
+    const images = document.querySelectorAll("img");
+    const buttons = document.querySelectorAll("button");
+    const reset = document.querySelector("#reset");
+    let isImageAlone = false;
+
+    //버튼 기능
+    buttons.forEach((button, button_index) => {
+        button.addEventListener("click", () => {
+            if (isImageAlone == true) {
+                reset.addEventListener("click", () => {
+                    images.forEach((image) => {
+                        image.style.display = "inline-block";
+                    });
+                });
+                isImageAlone = false;
+            } else {
+                images.forEach((image, image_index) => {
+                    if (button_index === image_index) {
+                        image.style.display = "inline-block";
+                    } else {
+                        image.style.display = "none";
+                    }
+                })
+                isImageAlone = true;
+            }
+
+        })
+    });
+
+    reset.addEventListener("click", () => {
+        images.forEach((image) => {
+            image.style.display = "inline-block";
+        });
+    });
+
+    // 사진 클릭 기능
+    images.forEach((image, index) => {
+        image.addEventListener("click", () => {
+            if (isImageAlone == true) {
+                images.forEach((image) => {
+                    image.style.display = "inline-block";
+                    image.style.width = "25%";
+                });
+                isImageAlone = false;
+            } else {
+                images.forEach((image, image_index) => {
+                    if (index === image_index) {
+                        image.style.display = "inline-block";
+                        image.style.width = "75%";
+                    } else {
+                        image.style.display = "none";
+
+                    }
+                });
+                isImageAlone = true;
+            }
+
+        });
+    });
+
+
+
+</script>
+
+</html>

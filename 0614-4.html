@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차례대로 서서히 이미지 나타내기</title>
+    <style>
+        #layout {
+            width: 600px;
+            height: 800px;
+            margin: auto;
+            border-top: 10px solid tomato;
+            border-bottom: 10px solid tomato;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            width: 600px;
+            height: 800px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="layout">
+        <h1>차례대로 서서히 나타내기</h1>
+    </section>
+
+    <script>
+        const imgs = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/5.jpg",
+            "images/6.jpg"
+        ];
+
+        const layout = document.querySelector("#layout");
+
+        window.addEventListener("load", () => {
+            let currentIndex = 0;
+            const show = () => {
+                const image = document.createElement("img");
+                image.src = imgs[currentIndex];
+
+                layout.appendChild(image);
+                image.style.opacity = "1";
+                
+                setTimeout(()=> {
+                    image.style.opacity = "0";
+                    setTimeout(()=> {
+                        image.remove();
+                        currentIndex++;
+                        if (currentIndex === imgs.length) {
+                            currentIndex = 0;
+                        }
+                        show();
+                    }, 1000);
+                    
+                }, 1000);
+                
+                
+            }
+            show();
+        })
+
+    </script>
+</html>
