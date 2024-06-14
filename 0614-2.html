@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #layout {
+            max-width: 650px;
+            margin: auto;
+        }
+        img {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <div>
+            <button>봄</button>
+            <button>여름</button>
+            <button>가을</button>
+            <button>겨울</button>
+            <button>리셋</button>
+        </div>
+        <div id="imgs">
+
+        </div>
+    </div>
+
+</body>
+<script>
+    const imgDiv = document.querySelector("#imgs");
+
+    const imgs = ['images/spring.jpg','images/summer.jpg','images/fall.jpg','images/winter.jpg'];
+    
+    imgs.forEach((img) => {
+        imgDiv.innerHTML += `<img src=${img} alt='계절'>`;
+    });
+    
+    const images = document.querySelectorAll("img");
+    const buttons = document.querySelectorAll("button");
+
+    buttons.forEach((button, button_index) => {
+        button.addEventListener("click", () => {
+            images.forEach((image, image_index) => {
+
+                if(button_index === image_index) {
+                    image.style.display = "inline-block";
+                } else {
+                    image.style.display = "none";
+                }
+            })
+        })
+    })
+
+</script>
+</html>

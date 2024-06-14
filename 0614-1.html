@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>값 입력받아서 계산하기</title>
+    <style>
+        input {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calc</h1>
+    <form action="#" method="get">
+        <label for="unit">단가 : </label>
+        <input id="unit" type="number" placeholder="0">
+        &nbsp;X&nbsp;
+        <label for="count">개수 : </label>
+        <input id="count" type="number" placeholder="0">
+        &nbsp;=&nbsp;
+        <input id="result" type="number" placeholder="0" readonly>
+    </form>
+</body>
+<script>
+    const unit = document.querySelector("#unit");
+    const count = document.querySelector("#count");
+    const result = document.querySelector("#result");
+
+    [unit, count].forEach((input) => {
+        input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                event.preventDefault();
+                result.value = unit.value * count.value;
+            }
+        });
+        input.addEventListener("input", (e) => {
+            const unit_max = 5;
+            const count_max = 3;
+            if (input.value.length > unit_max && input.id === "unit") {
+                input.value = input.value.substr(0, unit_max);
+            } else if (input.value.length > count_max && input.id === "count") {
+                input.value = input.value.substr(0, count_max);
+            }
+        })
+    });
+
+</script>
+
+</html>
